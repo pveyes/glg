@@ -1,0 +1,42 @@
+{
+  "name": "glg",
+  "version": "0.1.0",
+  "description": "Git log parser",
+  "keywords": [
+    "git",
+    "log",
+    "parser",
+    "diff"
+  ],
+  "author": "Fatih Kalifa <fatihkalifa@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": "cli.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "common-tags": "^1.4.0",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^21.0.2",
+    "lint-staged": "^4.1.3",
+    "prettier": "^1.6.1"
+  },
+  "engine": {
+    "node": "^8.4.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "jest --coverage --no-cache --ci --runInBand",
+    "test:watch": "jest --watch --no-cache"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

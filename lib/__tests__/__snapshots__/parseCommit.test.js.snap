@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parse commit separated by separator 1`] = `
+Object {
+  "changes": Array [
+    Object {
+      "path": "lib/style/parser.js",
+      "type": "M",
+    },
+    Object {
+      "path": "lib/style/entities.js",
+      "type": "A",
+    },
+  ],
+  "createdDate": "Thu Sep 7 14:12:42 2017 +0700",
+  "hash": "87c4fad",
+  "publishedDate": "Fri Sep 8 14:02:52 2017 +0700",
+  "subject": "fix style parser for encoded quote",
+}
+`;
+
+exports[`provides \`from\` for renamed file 1`] = `
+Object {
+  "changes": Array [
+    Object {
+      "from": "config/webpack/desktop.js",
+      "path": "packages/nodejs-web/config/webpackDesktop.js",
+      "type": "R100",
+    },
+    Object {
+      "path": "webpack.config.desktop.js",
+      "type": "D",
+    },
+    Object {
+      "path": "webpack.config.js",
+      "type": "M",
+    },
+  ],
+  "createdDate": "Fri Sep 8 22:05:51 2017 +0700",
+  "hash": "a454fc6",
+  "publishedDate": "Fri Sep 8 22:08:43 2017 +0700",
+  "subject": "refactor webpack config",
+}
+`;
