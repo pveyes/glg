@@ -1,5 +1,7 @@
 # glg [![Build Status](https://travis-ci.org/pveyes/glg.svg)](https://travis-ci.org/pveyes/glg)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pveyes/glg.svg)](https://greenkeeper.io/)
+
 > Get parsed git log data easily for analysis
 
 ## Install
