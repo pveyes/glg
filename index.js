@@ -6,7 +6,7 @@ const parseCommit = require("./lib/parseCommit");
 COMMIT_SEPARATOR = "#~#^#";
 COMMIT_INFO_SEPARATOR = "^^^";
 
-const commitDataMap = {
+const COMMIT_DATA_MAP = {
   commitHash: "%h",
   authorEmail: "%ae",
   authorName: "%an",
@@ -18,7 +18,8 @@ const commitDataMap = {
 module.exports = function parseLog(dir, options = {}) {
   const {
     separator = COMMIT_SEPARATOR,
-    infoSeparator = COMMIT_INFO_SEPARATOR
+    infoSeparator = COMMIT_INFO_SEPARATOR,
+    commitDataMap = COMMIT_DATA_MAP
   } = options;
 
   const commitInfo = Object.values(commitDataMap)
