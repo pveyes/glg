@@ -23,7 +23,7 @@ module.exports = function parseLog(dir, options = {}) {
   } = options;
 
   const commitInfo = Object.values(commitDataMap)
-    // we need to add empty string as placeholder for commit changes
+    // we need to add empty string as placeholder for change set
     .concat([""])
     .join(infoSeparator);
 
