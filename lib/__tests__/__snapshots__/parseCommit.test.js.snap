@@ -12,8 +12,8 @@ Object {
       "type": "A",
     },
   ],
+  "commitHash": "87c4fad",
   "createdDate": "Thu Sep 7 14:12:42 2017 +0700",
-  "hash": "87c4fad",
   "publishedDate": "Fri Sep 8 14:02:52 2017 +0700",
   "subject": "fix style parser for encoded quote",
 }
@@ -36,8 +36,8 @@ Object {
       "type": "M",
     },
   ],
+  "commitHash": "a454fc6",
   "createdDate": "Fri Sep 8 22:05:51 2017 +0700",
-  "hash": "a454fc6",
   "publishedDate": "Fri Sep 8 22:08:43 2017 +0700",
   "subject": "refactor webpack config",
 }

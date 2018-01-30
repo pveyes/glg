@@ -6,24 +6,25 @@ const parseCommit = require("./lib/parseCommit");
 COMMIT_SEPARATOR = "#~#^#";
 COMMIT_INFO_SEPARATOR = "^^^";
 
+const commitDataMap = {
+  commitHash: "%h",
+  authorEmail: "%ae",
+  authorName: "%an",
+  subject: "%s",
+  createdDate: "%ad",
+  publishedDate: "%cd"
+};
+
 module.exports = function parseLog(dir, options = {}) {
   const {
     separator = COMMIT_SEPARATOR,
     infoSeparator = COMMIT_INFO_SEPARATOR
   } = options;
 
-  const commitInfo = [
-    // commit hash
-    "%h",
-    // commit message (subject)
-    "%s",
-    // created date (git commit, start diff/PR)
-    "%ad",
-    // published date (landed to master)
-    "%cd",
-    // placeholder for commit changes
-    ""
-  ].join(infoSeparator);
+  const commitInfo = Object.values(commitDataMap)
+    // we need to add empty string as placeholder for commit changes
+    .concat([""])
+    .join(infoSeparator);
 
   return new Promise((resolve, reject) => {
     const command = spawn("git", [
@@ -54,7 +55,7 @@ module.exports = function parseLog(dir, options = {}) {
           continue;
         }
 
-        const commit = parseCommit(commitData, infoSeparator);
+        const commit = parseCommit(commitData, infoSeparator, commitDataMap);
         history.push(commit);
       }
     });
